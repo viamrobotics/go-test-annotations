@@ -1,0 +1,23 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  main:
+    name: All checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: viamrobotics/js-config/.github/actions/setup@6c61960a2efeed94e1b31af623f71f5350d7ba97
+
+      - name: Run all checks
+        run: pnpm run all
+
+      - name: Verify no changes
+        run: git diff --exit-code

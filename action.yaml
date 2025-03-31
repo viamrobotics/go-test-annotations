@@ -1,0 +1,17 @@
+name: Go test annotations
+description: Add annotations from `go test` to your GitHub Actions workflow runs
+
+author: Viam
+
+inputs:
+  test-report:
+    description: Path to the test results file from `go test -json`
+    default: 'test.json'
+
+  rerun-fails-report:
+    description: Path to the test results file from `go test -json`
+    default: 'test.json'
+
+runs:
+  using: node20
+  main: dist/main.js

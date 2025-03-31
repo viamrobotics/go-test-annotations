@@ -1,0 +1,11 @@
+{
+  "extends": "@viamrobotics/typescript-config/base.json",
+  "compilerOptions": {
+    "types": ["node"],
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "target": "esnext",
+    "noEmit": true
+  },
+  "exclude": ["dist"]
+}

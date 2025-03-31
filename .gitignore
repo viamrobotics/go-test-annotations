@@ -1,0 +1,4 @@
+node_modules
+
+# TODO(mc, 2025-03-31): remove when ready to release
+dist

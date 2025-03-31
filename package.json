@@ -1,0 +1,52 @@
+{
+  "name": "@viamrobotics/go-test-annotations",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Add annotations from `go test` to your GitHub Actions workflow runs",
+  "keywords": [
+    "ci",
+    "golang",
+    "gotestsum"
+  ],
+  "homepage": "https://github.com/viamrobotics/go-test-annotations#readme",
+  "bugs": {
+    "url": "https://github.com/viamrobotics/go-test-annotations/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viamrobotics/go-test-annotations.git"
+  },
+  "license": "MIT",
+  "author": "Michael Cousins <michael.cousins@viam.com> (https://www.viam.com/)",
+  "type": "commonjs",
+  "scripts": {
+    "all": "pnpm run check && pnpm run format && pnpm run test:once && pnpm run build",
+    "build": "esbuild src/main.ts --bundle --format=cjs --platform=node --target=node20 --outdir=dist",
+    "check": "tsc",
+    "format": "eslint . --fix && prettier . --write",
+    "lint": "eslint . && prettier . --check",
+    "test": "vitest",
+    "test:once": "vitest --run"
+  },
+  "devDependencies": {
+    "@actions/core": "^1.11.1",
+    "@types/node": "^22.13.14",
+    "@viamrobotics/eslint-config": "^1.0.2",
+    "@viamrobotics/prettier-config": "^1.0.1",
+    "@viamrobotics/typescript-config": "^0.1.1",
+    "esbuild": "^0.25.1",
+    "eslint": "^9.23.0",
+    "prettier": "^3.5.3",
+    "tempy": "^3.1.0",
+    "typescript": "~5.7.3",
+    "typescript-eslint": "~8.23.0",
+    "valibot": "^1.0.0",
+    "vitest": "^3.0.9"
+  },
+  "packageManager": "pnpm@10.7.0+sha512.6b865ad4b62a1d9842b61d674a393903b871d9244954f652b8842c2b553c72176b278f64c463e52d40fff8aba385c235c8c9ecf5cc7de4fd78b8bb6d49633ab6",
+  "pnpm": {
+    "overrides": {
+      "@typescript-eslint/utils": "~8.23.0"
+    }
+  }
+}
