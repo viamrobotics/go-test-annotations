@@ -1,4 +1,8 @@
-import timers from 'node:timers/promises';
+import type { Annotation } from './actions-core.js';
+import { createAnnotations } from './annotations.js';
+import { readRerunReport } from './rerun-report.js';
+import { createSuiteSummary } from './suite-summary.js';
+import { readTestReport } from './test-report.js';
 
 /** Input options used to generate annotations. */
 interface GoTestAnnotationOptions {
@@ -10,13 +14,14 @@ interface GoTestAnnotationOptions {
 const goTestAnnotations = async ({
   testReport,
   rerunFailsReport,
-}: GoTestAnnotationOptions): Promise<string> => {
-  console.log('Test report', testReport);
-  console.log('Rerun fails report', rerunFailsReport);
+}: GoTestAnnotationOptions): Promise<Annotation[]> => {
+  const [suiteSummary, reruns] = await Promise.all([
+    createSuiteSummary(readTestReport(testReport)),
+    readRerunReport(rerunFailsReport),
+  ]);
 
-  await timers.setTimeout(0);
-
-  return 'hello world';
+  return createAnnotations(suiteSummary, reruns);
 };
 
-export { goTestAnnotations };
+export { type GoTestAnnotationOptions, goTestAnnotations };
+export type { Annotation } from './actions-core.js';
