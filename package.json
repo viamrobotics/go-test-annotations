@@ -16,7 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/viamrobotics/go-test-annotations.git"
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "author": "Michael Cousins <michael.cousins@viam.com> (https://www.viam.com/)",
   "type": "commonjs",
   "scripts": {
