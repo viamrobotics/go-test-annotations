@@ -19957,7 +19957,7 @@ var import_node_fs = __toESM(require("node:fs"));
 var import_node_os3 = __toESM(require("node:os"));
 var import_node_stream = __toESM(require("node:stream"));
 
-// node_modules/.pnpm/valibot@1.0.0_typescript@5.7.3/node_modules/valibot/dist/index.js
+// node_modules/.pnpm/valibot@1.0.0_typescript@5.8.3/node_modules/valibot/dist/index.js
 var store;
 // @__NO_SIDE_EFFECTS__
 function getGlobalConfig(config2) {
