@@ -32,6 +32,25 @@ describe('createAnnotations', () => {
     ]);
   });
 
+  it('gets annotation for a package failure', () => {
+    const summary: SuiteSummary = new Map([
+      [
+        'github.com/owner/repo/greet',
+        new Map([[undefined, { status: 'fail', output: ['oh no!'] }]]),
+      ],
+    ]);
+
+    const result = Subject.createAnnotations(summary, []);
+
+    expect(result).toEqual([
+      {
+        title: 'FAIL: github.com/owner/repo/greet',
+        message: 'oh no!',
+        level: 'error',
+      },
+    ]);
+  });
+
   it('extracts a test file from a test output', () => {
     const summary: SuiteSummary = new Map([
       [

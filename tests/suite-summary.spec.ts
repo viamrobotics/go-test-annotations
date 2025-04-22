@@ -96,4 +96,28 @@ describe('createSuiteSummary', () => {
       ])
     );
   });
+
+  it('collects package-level failures and output', async () => {
+    const result = await Subject.createSuiteSummary(
+      stream.Readable.from([
+        { Package: 'greet', Action: 'start' },
+        { Package: 'greet', Action: 'output', Output: 'hello' },
+        { Package: 'greet', Action: 'fail' },
+        { Package: 'greet', Action: 'start' },
+        { Package: 'greet', Action: 'output', Output: 'world' },
+        { Package: 'greet', Action: 'pass' },
+      ])
+    );
+
+    expect(result).toEqual(
+      new Map([
+        [
+          'greet',
+          new Map([
+            [undefined, { status: 'fail', output: ['hello', 'world'] }],
+          ]),
+        ],
+      ])
+    );
+  });
 });

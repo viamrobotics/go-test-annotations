@@ -19831,7 +19831,7 @@ var createAnnotations = (suiteSummary, reruns) => {
         (r) => r.packageName === packageName && r.testName === testName
       );
       const testAnnotation = getAnnotationFromOutput(
-        `${packageName}.${testName}`,
+        testName ? `${packageName}.${testName}` : packageName,
         packagePath,
         testSummary,
         rerun
@@ -19928,14 +19928,14 @@ var addEventToSummary = (summary, event) => {
     Output: output,
     Action: action
   } = event ?? {};
-  if (!packageName || !testName) {
+  if (!packageName) {
     return summary;
   }
   const packageSummary = summary.get(packageName) ?? createPackageSummary();
   const testSummary = packageSummary.get(testName) ?? createTestSummary();
   summary.set(packageName, packageSummary);
   packageSummary.set(testName, testSummary);
-  if (action === "run") {
+  if (action === "run" || action === "start") {
     testSummary.output.push("");
   }
   if (output) {
