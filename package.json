@@ -1,6 +1,6 @@
 {
   "name": "@viamrobotics/go-test-annotations",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "Add annotations from `go test` to your GitHub Actions workflow runs",
   "keywords": [
