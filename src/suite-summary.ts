@@ -4,7 +4,7 @@ import type { TestEvent } from './test-report.js';
 type SuiteSummary = Map<string, PackageSummary>;
 
 /** A map of all tests in a package by the test name. */
-type PackageSummary = Map<string, TestSummary>;
+type PackageSummary = Map<string | undefined, TestSummary>;
 
 /** The summary of an individual test or parent test. */
 interface TestSummary {
@@ -44,7 +44,7 @@ const addEventToSummary = (
     Action: action,
   } = event ?? {};
 
-  if (!packageName || !testName) {
+  if (!packageName) {
     return summary;
   }
 
@@ -54,7 +54,7 @@ const addEventToSummary = (
   summary.set(packageName, packageSummary);
   packageSummary.set(testName, testSummary);
 
-  if (action === 'run') {
+  if (action === 'run' || action === 'start') {
     testSummary.output.push('');
   }
 

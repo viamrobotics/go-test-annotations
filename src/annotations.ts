@@ -24,7 +24,7 @@ const createAnnotations = (
       );
 
       const testAnnotation = getAnnotationFromOutput(
-        `${packageName}.${testName}`,
+        testName ? `${packageName}.${testName}` : packageName,
         packagePath,
         testSummary,
         rerun
