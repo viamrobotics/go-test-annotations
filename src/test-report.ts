@@ -1,5 +1,3 @@
-/* eslint-disable id-length */
-/* eslint-disable func-style */
 import fs from 'node:fs';
 import os from 'node:os';
 import stream from 'node:stream';
@@ -85,7 +83,6 @@ async function* splitLines(chunks: AsyncIterable<Buffer>) {
   }
 
   const remaining = buffer.trim();
-  buffer = '';
 
   if (remaining) {
     yield remaining;

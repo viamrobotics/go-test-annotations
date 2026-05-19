@@ -1,7 +1,3 @@
-/*
-  eslint-disable
-  @typescript-eslint/restrict-template-expressions
-*/
 import { annotate, getInput, setFailed } from './actions-core';
 import { goTestAnnotations } from './index.js';
 
