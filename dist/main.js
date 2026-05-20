@@ -61,7 +61,7 @@ var require_utils = __commonJS({
 var require_command = __commonJS({
   "node_modules/.pnpm/@actions+core@1.11.1/node_modules/@actions/core/lib/command.js"(exports2) {
     "use strict";
-    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? (function(o, m, k, k2) {
       if (k2 === void 0) k2 = k;
       var desc = Object.getOwnPropertyDescriptor(m, k);
       if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -70,13 +70,13 @@ var require_command = __commonJS({
         } };
       }
       Object.defineProperty(o, k2, desc);
-    } : function(o, m, k, k2) {
+    }) : (function(o, m, k, k2) {
       if (k2 === void 0) k2 = k;
       o[k2] = m[k];
-    });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o, v) {
+    }));
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? (function(o, v) {
       Object.defineProperty(o, "default", { enumerable: true, value: v });
-    } : function(o, v) {
+    }) : function(o, v) {
       o["default"] = v;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
@@ -147,7 +147,7 @@ var require_command = __commonJS({
 var require_file_command = __commonJS({
   "node_modules/.pnpm/@actions+core@1.11.1/node_modules/@actions/core/lib/file-command.js"(exports2) {
     "use strict";
-    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? (function(o, m, k, k2) {
       if (k2 === void 0) k2 = k;
       var desc = Object.getOwnPropertyDescriptor(m, k);
       if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -156,13 +156,13 @@ var require_file_command = __commonJS({
         } };
       }
       Object.defineProperty(o, k2, desc);
-    } : function(o, m, k, k2) {
+    }) : (function(o, m, k, k2) {
       if (k2 === void 0) k2 = k;
       o[k2] = m[k];
-    });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o, v) {
+    }));
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? (function(o, v) {
       Object.defineProperty(o, "default", { enumerable: true, value: v });
-    } : function(o, v) {
+    }) : function(o, v) {
       o["default"] = v;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
@@ -13728,7 +13728,7 @@ var require_fetch = __commonJS({
             fetchParams.controller.terminate(e);
           }
         };
-        requestBody = async function* () {
+        requestBody = (async function* () {
           try {
             for await (const bytes of request.body.stream) {
               yield* processBodyChunk(bytes);
@@ -13737,7 +13737,7 @@ var require_fetch = __commonJS({
           } catch (err) {
             processBodyError(err);
           }
-        }();
+        })();
       }
       try {
         const { body, status, statusText, headersList, socket } = await dispatch({ body: requestBody });
@@ -17288,7 +17288,7 @@ var require_undici = __commonJS({
 var require_lib = __commonJS({
   "node_modules/.pnpm/@actions+http-client@2.2.3/node_modules/@actions/http-client/lib/index.js"(exports2) {
     "use strict";
-    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? (function(o, m, k, k2) {
       if (k2 === void 0) k2 = k;
       var desc = Object.getOwnPropertyDescriptor(m, k);
       if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -17297,13 +17297,13 @@ var require_lib = __commonJS({
         } };
       }
       Object.defineProperty(o, k2, desc);
-    } : function(o, m, k, k2) {
+    }) : (function(o, m, k, k2) {
       if (k2 === void 0) k2 = k;
       o[k2] = m[k];
-    });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o, v) {
+    }));
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? (function(o, v) {
       Object.defineProperty(o, "default", { enumerable: true, value: v });
-    } : function(o, v) {
+    }) : function(o, v) {
       o["default"] = v;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
@@ -18403,7 +18403,7 @@ var require_summary = __commonJS({
 var require_path_utils = __commonJS({
   "node_modules/.pnpm/@actions+core@1.11.1/node_modules/@actions/core/lib/path-utils.js"(exports2) {
     "use strict";
-    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? (function(o, m, k, k2) {
       if (k2 === void 0) k2 = k;
       var desc = Object.getOwnPropertyDescriptor(m, k);
       if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -18412,13 +18412,13 @@ var require_path_utils = __commonJS({
         } };
       }
       Object.defineProperty(o, k2, desc);
-    } : function(o, m, k, k2) {
+    }) : (function(o, m, k, k2) {
       if (k2 === void 0) k2 = k;
       o[k2] = m[k];
-    });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o, v) {
+    }));
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? (function(o, v) {
       Object.defineProperty(o, "default", { enumerable: true, value: v });
-    } : function(o, v) {
+    }) : function(o, v) {
       o["default"] = v;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
@@ -18452,18 +18452,18 @@ var require_path_utils = __commonJS({
 var require_io_util = __commonJS({
   "node_modules/.pnpm/@actions+io@1.1.3/node_modules/@actions/io/lib/io-util.js"(exports2) {
     "use strict";
-    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? (function(o, m, k, k2) {
       if (k2 === void 0) k2 = k;
       Object.defineProperty(o, k2, { enumerable: true, get: function() {
         return m[k];
       } });
-    } : function(o, m, k, k2) {
+    }) : (function(o, m, k, k2) {
       if (k2 === void 0) k2 = k;
       o[k2] = m[k];
-    });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o, v) {
+    }));
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? (function(o, v) {
       Object.defineProperty(o, "default", { enumerable: true, value: v });
-    } : function(o, v) {
+    }) : function(o, v) {
       o["default"] = v;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
@@ -18625,18 +18625,18 @@ var require_io_util = __commonJS({
 var require_io = __commonJS({
   "node_modules/.pnpm/@actions+io@1.1.3/node_modules/@actions/io/lib/io.js"(exports2) {
     "use strict";
-    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? (function(o, m, k, k2) {
       if (k2 === void 0) k2 = k;
       Object.defineProperty(o, k2, { enumerable: true, get: function() {
         return m[k];
       } });
-    } : function(o, m, k, k2) {
+    }) : (function(o, m, k, k2) {
       if (k2 === void 0) k2 = k;
       o[k2] = m[k];
-    });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o, v) {
+    }));
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? (function(o, v) {
       Object.defineProperty(o, "default", { enumerable: true, value: v });
-    } : function(o, v) {
+    }) : function(o, v) {
       o["default"] = v;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
@@ -18873,18 +18873,18 @@ var require_io = __commonJS({
 var require_toolrunner = __commonJS({
   "node_modules/.pnpm/@actions+exec@1.1.1/node_modules/@actions/exec/lib/toolrunner.js"(exports2) {
     "use strict";
-    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? (function(o, m, k, k2) {
       if (k2 === void 0) k2 = k;
       Object.defineProperty(o, k2, { enumerable: true, get: function() {
         return m[k];
       } });
-    } : function(o, m, k, k2) {
+    }) : (function(o, m, k, k2) {
       if (k2 === void 0) k2 = k;
       o[k2] = m[k];
-    });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o, v) {
+    }));
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? (function(o, v) {
       Object.defineProperty(o, "default", { enumerable: true, value: v });
-    } : function(o, v) {
+    }) : function(o, v) {
       o["default"] = v;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
@@ -19357,18 +19357,18 @@ var require_toolrunner = __commonJS({
 var require_exec = __commonJS({
   "node_modules/.pnpm/@actions+exec@1.1.1/node_modules/@actions/exec/lib/exec.js"(exports2) {
     "use strict";
-    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? (function(o, m, k, k2) {
       if (k2 === void 0) k2 = k;
       Object.defineProperty(o, k2, { enumerable: true, get: function() {
         return m[k];
       } });
-    } : function(o, m, k, k2) {
+    }) : (function(o, m, k, k2) {
       if (k2 === void 0) k2 = k;
       o[k2] = m[k];
-    });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o, v) {
+    }));
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? (function(o, v) {
       Object.defineProperty(o, "default", { enumerable: true, value: v });
-    } : function(o, v) {
+    }) : function(o, v) {
       o["default"] = v;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
@@ -19464,7 +19464,7 @@ var require_exec = __commonJS({
 var require_platform = __commonJS({
   "node_modules/.pnpm/@actions+core@1.11.1/node_modules/@actions/core/lib/platform.js"(exports2) {
     "use strict";
-    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? (function(o, m, k, k2) {
       if (k2 === void 0) k2 = k;
       var desc = Object.getOwnPropertyDescriptor(m, k);
       if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -19473,13 +19473,13 @@ var require_platform = __commonJS({
         } };
       }
       Object.defineProperty(o, k2, desc);
-    } : function(o, m, k, k2) {
+    }) : (function(o, m, k, k2) {
       if (k2 === void 0) k2 = k;
       o[k2] = m[k];
-    });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o, v) {
+    }));
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? (function(o, v) {
       Object.defineProperty(o, "default", { enumerable: true, value: v });
-    } : function(o, v) {
+    }) : function(o, v) {
       o["default"] = v;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
@@ -19583,7 +19583,7 @@ var require_platform = __commonJS({
 var require_core = __commonJS({
   "node_modules/.pnpm/@actions+core@1.11.1/node_modules/@actions/core/lib/core.js"(exports2) {
     "use strict";
-    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? function(o, m, k, k2) {
+    var __createBinding = exports2 && exports2.__createBinding || (Object.create ? (function(o, m, k, k2) {
       if (k2 === void 0) k2 = k;
       var desc = Object.getOwnPropertyDescriptor(m, k);
       if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
@@ -19592,13 +19592,13 @@ var require_core = __commonJS({
         } };
       }
       Object.defineProperty(o, k2, desc);
-    } : function(o, m, k, k2) {
+    }) : (function(o, m, k, k2) {
       if (k2 === void 0) k2 = k;
       o[k2] = m[k];
-    });
-    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? function(o, v) {
+    }));
+    var __setModuleDefault = exports2 && exports2.__setModuleDefault || (Object.create ? (function(o, v) {
       Object.defineProperty(o, "default", { enumerable: true, value: v });
-    } : function(o, v) {
+    }) : function(o, v) {
       o["default"] = v;
     });
     var __importStar = exports2 && exports2.__importStar || function(mod) {
@@ -19957,47 +19957,48 @@ var import_node_fs = __toESM(require("node:fs"));
 var import_node_os3 = __toESM(require("node:os"));
 var import_node_stream = __toESM(require("node:stream"));
 
-// node_modules/.pnpm/valibot@1.0.0_typescript@5.8.3/node_modules/valibot/dist/index.js
-var store;
+// node_modules/.pnpm/valibot@1.4.0_typescript@5.8.3/node_modules/valibot/dist/index.mjs
+var store$4;
+var DEFAULT_CONFIG = {
+  lang: void 0,
+  message: void 0,
+  abortEarly: void 0,
+  abortPipeEarly: void 0
+};
 // @__NO_SIDE_EFFECTS__
-function getGlobalConfig(config2) {
+function getGlobalConfig(config$1) {
+  if (!config$1 && !store$4) return DEFAULT_CONFIG;
   return {
-    lang: config2?.lang ?? store?.lang,
-    message: config2?.message,
-    abortEarly: config2?.abortEarly ?? store?.abortEarly,
-    abortPipeEarly: config2?.abortPipeEarly ?? store?.abortPipeEarly
+    lang: config$1?.lang ?? store$4?.lang,
+    message: config$1?.message,
+    abortEarly: config$1?.abortEarly ?? store$4?.abortEarly,
+    abortPipeEarly: config$1?.abortPipeEarly ?? store$4?.abortPipeEarly
   };
 }
-var store2;
+var store$3;
 // @__NO_SIDE_EFFECTS__
 function getGlobalMessage(lang) {
-  return store2?.get(lang);
+  return store$3?.get(lang);
 }
-var store3;
+var store$2;
 // @__NO_SIDE_EFFECTS__
 function getSchemaMessage(lang) {
-  return store3?.get(lang);
+  return store$2?.get(lang);
 }
-var store4;
+var store$1;
 // @__NO_SIDE_EFFECTS__
 function getSpecificMessage(reference, lang) {
-  return store4?.get(reference)?.get(lang);
+  return store$1?.get(reference)?.get(lang);
 }
 // @__NO_SIDE_EFFECTS__
 function _stringify(input) {
   const type = typeof input;
-  if (type === "string") {
-    return `"${input}"`;
-  }
-  if (type === "number" || type === "bigint" || type === "boolean") {
-    return `${input}`;
-  }
-  if (type === "object" || type === "function") {
-    return (input && Object.getPrototypeOf(input)?.constructor?.name) ?? "null";
-  }
+  if (type === "string") return `"${input}"`;
+  if (type === "number" || type === "bigint" || type === "boolean") return `${input}`;
+  if (type === "object" || type === "function") return (input && Object.getPrototypeOf(input)?.constructor?.name) ?? "null";
   return type;
 }
-function _addIssue(context, label, dataset, config2, other) {
+function _addIssue(context, label, dataset, config$1, other) {
   const input = other && "input" in other ? other.input : dataset.value;
   const expected = other?.expected ?? context.expects ?? null;
   const received = other?.received ?? /* @__PURE__ */ _stringify(input);
@@ -20011,80 +20012,59 @@ function _addIssue(context, label, dataset, config2, other) {
     requirement: context.requirement,
     path: other?.path,
     issues: other?.issues,
-    lang: config2.lang,
-    abortEarly: config2.abortEarly,
-    abortPipeEarly: config2.abortPipeEarly
+    lang: config$1.lang,
+    abortEarly: config$1.abortEarly,
+    abortPipeEarly: config$1.abortPipeEarly
   };
   const isSchema = context.kind === "schema";
-  const message = other?.message ?? context.message ?? /* @__PURE__ */ getSpecificMessage(context.reference, issue.lang) ?? (isSchema ? /* @__PURE__ */ getSchemaMessage(issue.lang) : null) ?? config2.message ?? /* @__PURE__ */ getGlobalMessage(issue.lang);
-  if (message !== void 0) {
-    issue.message = typeof message === "function" ? (
-      // @ts-expect-error
-      message(issue)
-    ) : message;
-  }
-  if (isSchema) {
-    dataset.typed = false;
-  }
-  if (dataset.issues) {
-    dataset.issues.push(issue);
-  } else {
-    dataset.issues = [issue];
-  }
+  const message$1 = other?.message ?? context.message ?? /* @__PURE__ */ getSpecificMessage(context.reference, issue.lang) ?? (isSchema ? /* @__PURE__ */ getSchemaMessage(issue.lang) : null) ?? config$1.message ?? /* @__PURE__ */ getGlobalMessage(issue.lang);
+  if (message$1 !== void 0) issue.message = typeof message$1 === "function" ? message$1(issue) : message$1;
+  if (isSchema) dataset.typed = false;
+  if (dataset.issues) dataset.issues.push(issue);
+  else dataset.issues = [issue];
 }
+var _standardCache = /* @__PURE__ */ new WeakMap();
 // @__NO_SIDE_EFFECTS__
 function _getStandardProps(context) {
-  return {
-    version: 1,
-    vendor: "valibot",
-    validate(value2) {
-      return context["~run"]({ value: value2 }, /* @__PURE__ */ getGlobalConfig());
-    }
-  };
+  let cached = _standardCache.get(context);
+  if (!cached) {
+    cached = {
+      version: 1,
+      vendor: "valibot",
+      validate(value$1) {
+        return context["~run"]({ value: value$1 }, /* @__PURE__ */ getGlobalConfig());
+      }
+    };
+    _standardCache.set(context, cached);
+  }
+  return cached;
 }
 // @__NO_SIDE_EFFECTS__
-function _joinExpects(values2, separator) {
-  const list = [...new Set(values2)];
-  if (list.length > 1) {
-    return `(${list.join(` ${separator} `)})`;
-  }
+function _joinExpects(values$1, separator) {
+  const list = [...new Set(values$1)];
+  if (list.length > 1) return `(${list.join(` ${separator} `)})`;
   return list[0] ?? "never";
 }
 var ValiError = class extends Error {
   /**
-   * Creates a Valibot error with useful information.
-   *
-   * @param issues The error issues.
-   */
+  * Creates a Valibot error with useful information.
+  *
+  * @param issues The error issues.
+  */
   constructor(issues) {
     super(issues[0].message);
     this.name = "ValiError";
     this.issues = issues;
   }
 };
-var EMOJI_REGEX = (
-  // eslint-disable-next-line redos-detector/no-unsafe-regex, regexp/no-dupe-disjunctions -- false positives
-  new RegExp("^(?:[\\u{1F1E6}-\\u{1F1FF}]{2}|\\u{1F3F4}[\\u{E0061}-\\u{E007A}]{2}[\\u{E0030}-\\u{E0039}\\u{E0061}-\\u{E007A}]{1,3}\\u{E007F}|(?:\\p{Emoji}\\uFE0F\\u20E3?|\\p{Emoji_Modifier_Base}\\p{Emoji_Modifier}?|\\p{Emoji_Presentation})(?:\\u200D(?:\\p{Emoji}\\uFE0F\\u20E3?|\\p{Emoji_Modifier_Base}\\p{Emoji_Modifier}?|\\p{Emoji_Presentation}))*)+$", "u")
-);
+var EMOJI_REGEX = new RegExp("^(?:[\\u{1F1E6}-\\u{1F1FF}]{2}|\\u{1F3F4}[\\u{E0061}-\\u{E007A}]{2}[\\u{E0030}-\\u{E0039}\\u{E0061}-\\u{E007A}]{1,3}\\u{E007F}|(?:\\p{Emoji}\\uFE0F\\u20E3?|\\p{Emoji_Modifier_Base}\\p{Emoji_Modifier}?|(?![\\p{Emoji_Modifier_Base}\\u{1F1E6}-\\u{1F1FF}])\\p{Emoji_Presentation})(?:\\u200D(?:\\p{Emoji}\\uFE0F\\u20E3?|\\p{Emoji_Modifier_Base}\\p{Emoji_Modifier}?|(?![\\p{Emoji_Modifier_Base}\\u{1F1E6}-\\u{1F1FF}])\\p{Emoji_Presentation}))*)+$", "u");
 // @__NO_SIDE_EFFECTS__
-function getFallback(schema, dataset, config2) {
-  return typeof schema.fallback === "function" ? (
-    // @ts-expect-error
-    schema.fallback(dataset, config2)
-  ) : (
-    // @ts-expect-error
-    schema.fallback
-  );
+function getFallback(schema, dataset, config$1) {
+  return typeof schema.fallback === "function" ? schema.fallback(dataset, config$1) : schema.fallback;
 }
 // @__NO_SIDE_EFFECTS__
-function getDefault(schema, dataset, config2) {
-  return typeof schema.default === "function" ? (
-    // @ts-expect-error
-    schema.default(dataset, config2)
-  ) : (
-    // @ts-expect-error
-    schema.default
-  );
+function getDefault(schema, dataset, config$1) {
+  return typeof schema.default === "function" ? schema.default(dataset, config$1) : schema.default;
 }
 // @__NO_SIDE_EFFECTS__
 function exactOptional(wrapped, default_) {
@@ -20099,13 +20079,13 @@ function exactOptional(wrapped, default_) {
     get "~standard"() {
       return /* @__PURE__ */ _getStandardProps(this);
     },
-    "~run"(dataset, config2) {
-      return this.wrapped["~run"](dataset, config2);
+    "~run"(dataset, config$1) {
+      return this.wrapped["~run"](dataset, config$1);
     }
   };
 }
 // @__NO_SIDE_EFFECTS__
-function literal(literal_, message) {
+function literal(literal_, message$1) {
   return {
     kind: "schema",
     type: "literal",
@@ -20113,144 +20093,116 @@ function literal(literal_, message) {
     expects: /* @__PURE__ */ _stringify(literal_),
     async: false,
     literal: literal_,
-    message,
+    message: message$1,
     get "~standard"() {
       return /* @__PURE__ */ _getStandardProps(this);
     },
-    "~run"(dataset, config2) {
-      if (dataset.value === this.literal) {
-        dataset.typed = true;
-      } else {
-        _addIssue(this, "type", dataset, config2);
-      }
+    "~run"(dataset, config$1) {
+      if (dataset.value === this.literal) dataset.typed = true;
+      else _addIssue(this, "type", dataset, config$1);
       return dataset;
     }
   };
 }
 // @__NO_SIDE_EFFECTS__
-function number(message) {
+function number(message$1) {
   return {
     kind: "schema",
     type: "number",
     reference: number,
     expects: "number",
     async: false,
-    message,
+    message: message$1,
     get "~standard"() {
       return /* @__PURE__ */ _getStandardProps(this);
     },
-    "~run"(dataset, config2) {
-      if (typeof dataset.value === "number" && !isNaN(dataset.value)) {
-        dataset.typed = true;
-      } else {
-        _addIssue(this, "type", dataset, config2);
-      }
+    "~run"(dataset, config$1) {
+      if (typeof dataset.value === "number" && !isNaN(dataset.value)) dataset.typed = true;
+      else _addIssue(this, "type", dataset, config$1);
       return dataset;
     }
   };
 }
 // @__NO_SIDE_EFFECTS__
-function object(entries, message) {
+function object(entries$1, message$1) {
   return {
     kind: "schema",
     type: "object",
     reference: object,
     expects: "Object",
     async: false,
-    entries,
-    message,
+    entries: entries$1,
+    message: message$1,
     get "~standard"() {
       return /* @__PURE__ */ _getStandardProps(this);
     },
-    "~run"(dataset, config2) {
+    "~run"(dataset, config$1) {
       const input = dataset.value;
       if (input && typeof input === "object") {
         dataset.typed = true;
         dataset.value = {};
         for (const key in this.entries) {
           const valueSchema = this.entries[key];
-          if (key in input || (valueSchema.type === "exact_optional" || valueSchema.type === "optional" || valueSchema.type === "nullish") && // @ts-expect-error
-          valueSchema.default !== void 0) {
-            const value2 = key in input ? (
-              // @ts-expect-error
-              input[key]
-            ) : /* @__PURE__ */ getDefault(valueSchema);
-            const valueDataset = valueSchema["~run"]({ value: value2 }, config2);
+          if (key in input || (valueSchema.type === "exact_optional" || valueSchema.type === "optional" || valueSchema.type === "nullish") && valueSchema.default !== void 0) {
+            const value$1 = key in input ? input[key] : /* @__PURE__ */ getDefault(valueSchema);
+            const valueDataset = valueSchema["~run"]({ value: value$1 }, config$1);
             if (valueDataset.issues) {
               const pathItem = {
                 type: "object",
                 origin: "value",
                 input,
                 key,
-                value: value2
+                value: value$1
               };
               for (const issue of valueDataset.issues) {
-                if (issue.path) {
-                  issue.path.unshift(pathItem);
-                } else {
-                  issue.path = [pathItem];
-                }
+                if (issue.path) issue.path.unshift(pathItem);
+                else issue.path = [pathItem];
                 dataset.issues?.push(issue);
               }
-              if (!dataset.issues) {
-                dataset.issues = valueDataset.issues;
-              }
-              if (config2.abortEarly) {
+              if (!dataset.issues) dataset.issues = valueDataset.issues;
+              if (config$1.abortEarly) {
                 dataset.typed = false;
                 break;
               }
             }
-            if (!valueDataset.typed) {
-              dataset.typed = false;
-            }
+            if (!valueDataset.typed) dataset.typed = false;
             dataset.value[key] = valueDataset.value;
-          } else if (valueSchema.fallback !== void 0) {
-            dataset.value[key] = /* @__PURE__ */ getFallback(valueSchema);
-          } else if (valueSchema.type !== "exact_optional" && valueSchema.type !== "optional" && valueSchema.type !== "nullish") {
-            _addIssue(this, "key", dataset, config2, {
+          } else if (valueSchema.fallback !== void 0) dataset.value[key] = /* @__PURE__ */ getFallback(valueSchema);
+          else if (valueSchema.type !== "exact_optional" && valueSchema.type !== "optional" && valueSchema.type !== "nullish") {
+            _addIssue(this, "key", dataset, config$1, {
               input: void 0,
               expected: `"${key}"`,
-              path: [
-                {
-                  type: "object",
-                  origin: "key",
-                  input,
-                  key,
-                  // @ts-expect-error
-                  value: input[key]
-                }
-              ]
+              path: [{
+                type: "object",
+                origin: "key",
+                input,
+                key,
+                value: input[key]
+              }]
             });
-            if (config2.abortEarly) {
-              break;
-            }
+            if (config$1.abortEarly) break;
           }
         }
-      } else {
-        _addIssue(this, "type", dataset, config2);
-      }
+      } else _addIssue(this, "type", dataset, config$1);
       return dataset;
     }
   };
 }
 // @__NO_SIDE_EFFECTS__
-function string(message) {
+function string(message$1) {
   return {
     kind: "schema",
     type: "string",
     reference: string,
     expects: "string",
     async: false,
-    message,
+    message: message$1,
     get "~standard"() {
       return /* @__PURE__ */ _getStandardProps(this);
     },
-    "~run"(dataset, config2) {
-      if (typeof dataset.value === "string") {
-        dataset.typed = true;
-      } else {
-        _addIssue(this, "type", dataset, config2);
-      }
+    "~run"(dataset, config$1) {
+      if (typeof dataset.value === "string") dataset.typed = true;
+      else _addIssue(this, "type", dataset, config$1);
       return dataset;
     }
   };
@@ -20258,83 +20210,52 @@ function string(message) {
 // @__NO_SIDE_EFFECTS__
 function _subIssues(datasets) {
   let issues;
-  if (datasets) {
-    for (const dataset of datasets) {
-      if (issues) {
-        issues.push(...dataset.issues);
-      } else {
-        issues = dataset.issues;
-      }
-    }
-  }
+  if (datasets) for (const dataset of datasets) if (issues) for (const issue of dataset.issues) issues.push(issue);
+  else issues = dataset.issues;
   return issues;
 }
 // @__NO_SIDE_EFFECTS__
-function union(options, message) {
+function union(options, message$1) {
   return {
     kind: "schema",
     type: "union",
     reference: union,
-    expects: /* @__PURE__ */ _joinExpects(
-      options.map((option) => option.expects),
-      "|"
-    ),
+    expects: /* @__PURE__ */ _joinExpects(options.map((option) => option.expects), "|"),
     async: false,
     options,
-    message,
+    message: message$1,
     get "~standard"() {
       return /* @__PURE__ */ _getStandardProps(this);
     },
-    "~run"(dataset, config2) {
+    "~run"(dataset, config$1) {
       let validDataset;
       let typedDatasets;
       let untypedDatasets;
       for (const schema of this.options) {
-        const optionDataset = schema["~run"]({ value: dataset.value }, config2);
-        if (optionDataset.typed) {
-          if (optionDataset.issues) {
-            if (typedDatasets) {
-              typedDatasets.push(optionDataset);
-            } else {
-              typedDatasets = [optionDataset];
-            }
-          } else {
-            validDataset = optionDataset;
-            break;
-          }
-        } else {
-          if (untypedDatasets) {
-            untypedDatasets.push(optionDataset);
-          } else {
-            untypedDatasets = [optionDataset];
-          }
+        const optionDataset = schema["~run"]({ value: dataset.value }, config$1);
+        if (optionDataset.typed) if (optionDataset.issues) if (typedDatasets) typedDatasets.push(optionDataset);
+        else typedDatasets = [optionDataset];
+        else {
+          validDataset = optionDataset;
+          break;
         }
+        else if (untypedDatasets) untypedDatasets.push(optionDataset);
+        else untypedDatasets = [optionDataset];
       }
-      if (validDataset) {
-        return validDataset;
-      }
+      if (validDataset) return validDataset;
       if (typedDatasets) {
-        if (typedDatasets.length === 1) {
-          return typedDatasets[0];
-        }
-        _addIssue(this, "type", dataset, config2, {
-          issues: /* @__PURE__ */ _subIssues(typedDatasets)
-        });
+        if (typedDatasets.length === 1) return typedDatasets[0];
+        _addIssue(this, "type", dataset, config$1, { issues: /* @__PURE__ */ _subIssues(typedDatasets) });
         dataset.typed = true;
-      } else if (untypedDatasets?.length === 1) {
-        return untypedDatasets[0];
-      } else {
-        _addIssue(this, "type", dataset, config2, {
-          issues: /* @__PURE__ */ _subIssues(untypedDatasets)
-        });
-      }
+      } else if (untypedDatasets?.length === 1) return untypedDatasets[0];
+      else _addIssue(this, "type", dataset, config$1, { issues: /* @__PURE__ */ _subIssues(untypedDatasets) });
       return dataset;
     }
   };
 }
 // @__NO_SIDE_EFFECTS__
-function safeParse(schema, input, config2) {
-  const dataset = schema["~run"]({ value: input }, /* @__PURE__ */ getGlobalConfig(config2));
+function safeParse(schema, input, config$1) {
+  const dataset = schema["~run"]({ value: input }, /* @__PURE__ */ getGlobalConfig(config$1));
   return {
     typed: dataset.typed,
     success: !dataset.issues,
