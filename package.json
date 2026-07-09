@@ -1,6 +1,6 @@
 {
   "name": "@viamrobotics/go-test-annotations",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "private": true,
   "description": "Add annotations from `go test` to your GitHub Actions workflow runs",
   "keywords": [
@@ -18,6 +18,9 @@
   },
   "license": "Apache-2.0",
   "type": "commonjs",
+  "engines": {
+    "node": ">=22 <25"
+  },
   "scripts": {
     "all": "pnpm run check && pnpm run format && pnpm run test:once && pnpm run build",
     "build": "esbuild src/main.ts --bundle --format=cjs --platform=node --target=node22 --outdir=dist",
@@ -31,7 +34,7 @@
     "@actions/core": "^1.11.1",
     "@eslint/js": "^10.0.1",
     "@types/node": "^25.9.0",
-    "esbuild": "^0.28.0",
+    "esbuild": "^0.28.1",
     "eslint": "^10.4.0",
     "eslint-config-prettier": "^10.1.8",
     "globals": "^17.6.0",
