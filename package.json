@@ -34,7 +34,7 @@
     "@viamrobotics/eslint-config": "^1.1.0",
     "@viamrobotics/prettier-config": "^1.0.1",
     "@viamrobotics/typescript-config": "^0.1.1",
-    "esbuild": "^0.25.1",
+    "esbuild": "^0.28.1",
     "eslint": "^9.25.1",
     "prettier": "^3.5.3",
     "tempy": "^3.1.0",
