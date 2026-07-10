@@ -19,11 +19,11 @@
   "license": "Apache-2.0",
   "type": "commonjs",
   "engines": {
-    "node": ">=22 <25"
+    "node": ">=24 <25"
   },
   "scripts": {
     "all": "pnpm run check && pnpm run format && pnpm run test:once && pnpm run build",
-    "build": "esbuild src/main.ts --bundle --format=cjs --platform=node --target=node22 --outdir=dist",
+    "build": "esbuild src/main.ts --bundle --format=cjs --platform=node --target=node24 --outdir=dist",
     "check": "tsc",
     "format": "eslint . --fix && prettier . --write",
     "lint": "eslint . && prettier . --check",
@@ -33,7 +33,7 @@
   "devDependencies": {
     "@actions/core": "^1.11.1",
     "@eslint/js": "^10.0.1",
-    "@types/node": "^25.9.0",
+    "@types/node": "^24.13.3",
     "esbuild": "^0.28.1",
     "eslint": "^10.4.0",
     "eslint-config-prettier": "^10.1.8",
