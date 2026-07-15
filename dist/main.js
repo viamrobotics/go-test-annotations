@@ -94,11 +94,11 @@ var require_command = __commonJS({
     };
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.issue = exports2.issueCommand = void 0;
-    var os4 = __importStar(require("os"));
+    var os5 = __importStar(require("os"));
     var utils_1 = require_utils();
     function issueCommand(command, properties, message) {
       const cmd = new Command(command, properties, message);
-      process.stdout.write(cmd.toString() + os4.EOL);
+      process.stdout.write(cmd.toString() + os5.EOL);
     }
     exports2.issueCommand = issueCommand;
     function issue(name, message = "") {
@@ -181,18 +181,18 @@ var require_file_command = __commonJS({
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.prepareKeyValueMessage = exports2.issueFileCommand = void 0;
     var crypto = __importStar(require("crypto"));
-    var fs3 = __importStar(require("fs"));
-    var os4 = __importStar(require("os"));
+    var fs4 = __importStar(require("fs"));
+    var os5 = __importStar(require("os"));
     var utils_1 = require_utils();
     function issueFileCommand(command, message) {
       const filePath = process.env[`GITHUB_${command}`];
       if (!filePath) {
         throw new Error(`Unable to find environment variable for file command ${command}`);
       }
-      if (!fs3.existsSync(filePath)) {
+      if (!fs4.existsSync(filePath)) {
         throw new Error(`Missing file at path: ${filePath}`);
       }
-      fs3.appendFileSync(filePath, `${(0, utils_1.toCommandValue)(message)}${os4.EOL}`, {
+      fs4.appendFileSync(filePath, `${(0, utils_1.toCommandValue)(message)}${os5.EOL}`, {
         encoding: "utf8"
       });
     }
@@ -206,7 +206,7 @@ var require_file_command = __commonJS({
       if (convertedValue.includes(delimiter)) {
         throw new Error(`Unexpected input: value should not contain the delimiter "${delimiter}"`);
       }
-      return `${key}<<${delimiter}${os4.EOL}${convertedValue}${os4.EOL}${delimiter}`;
+      return `${key}<<${delimiter}${os5.EOL}${convertedValue}${os5.EOL}${delimiter}`;
     }
     exports2.prepareKeyValueMessage = prepareKeyValueMessage;
   }
@@ -27728,12 +27728,12 @@ var require_io_util = __commonJS({
     var _a;
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.getCmdPath = exports2.tryGetExecutablePath = exports2.isRooted = exports2.isDirectory = exports2.exists = exports2.READONLY = exports2.UV_FS_O_EXLOCK = exports2.IS_WINDOWS = exports2.unlink = exports2.symlink = exports2.stat = exports2.rmdir = exports2.rm = exports2.rename = exports2.readlink = exports2.readdir = exports2.open = exports2.mkdir = exports2.lstat = exports2.copyFile = exports2.chmod = void 0;
-    var fs3 = __importStar(require("fs"));
+    var fs4 = __importStar(require("fs"));
     var path2 = __importStar(require("path"));
-    _a = fs3.promises, exports2.chmod = _a.chmod, exports2.copyFile = _a.copyFile, exports2.lstat = _a.lstat, exports2.mkdir = _a.mkdir, exports2.open = _a.open, exports2.readdir = _a.readdir, exports2.readlink = _a.readlink, exports2.rename = _a.rename, exports2.rm = _a.rm, exports2.rmdir = _a.rmdir, exports2.stat = _a.stat, exports2.symlink = _a.symlink, exports2.unlink = _a.unlink;
+    _a = fs4.promises, exports2.chmod = _a.chmod, exports2.copyFile = _a.copyFile, exports2.lstat = _a.lstat, exports2.mkdir = _a.mkdir, exports2.open = _a.open, exports2.readdir = _a.readdir, exports2.readlink = _a.readlink, exports2.rename = _a.rename, exports2.rm = _a.rm, exports2.rmdir = _a.rmdir, exports2.stat = _a.stat, exports2.symlink = _a.symlink, exports2.unlink = _a.unlink;
     exports2.IS_WINDOWS = process.platform === "win32";
     exports2.UV_FS_O_EXLOCK = 268435456;
-    exports2.READONLY = fs3.constants.O_RDONLY;
+    exports2.READONLY = fs4.constants.O_RDONLY;
     function exists(fsPath) {
       return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -28148,7 +28148,7 @@ var require_toolrunner = __commonJS({
     };
     Object.defineProperty(exports2, "__esModule", { value: true });
     exports2.argStringToArray = exports2.ToolRunner = void 0;
-    var os4 = __importStar(require("os"));
+    var os5 = __importStar(require("os"));
     var events = __importStar(require("events"));
     var child = __importStar(require("child_process"));
     var path2 = __importStar(require("path"));
@@ -28203,12 +28203,12 @@ var require_toolrunner = __commonJS({
       _processLineBuffer(data, strBuffer, onLine) {
         try {
           let s = strBuffer + data.toString();
-          let n = s.indexOf(os4.EOL);
+          let n = s.indexOf(os5.EOL);
           while (n > -1) {
             const line = s.substring(0, n);
             onLine(line);
-            s = s.substring(n + os4.EOL.length);
-            n = s.indexOf(os4.EOL);
+            s = s.substring(n + os5.EOL.length);
+            n = s.indexOf(os5.EOL);
           }
           return s;
         } catch (err) {
@@ -28377,7 +28377,7 @@ var require_toolrunner = __commonJS({
             }
             const optionsNonNull = this._cloneExecOptions(this.options);
             if (!optionsNonNull.silent && optionsNonNull.outStream) {
-              optionsNonNull.outStream.write(this._getCommandString(optionsNonNull) + os4.EOL);
+              optionsNonNull.outStream.write(this._getCommandString(optionsNonNull) + os5.EOL);
             }
             const state = new ExecState(optionsNonNull, this.toolPath);
             state.on("debug", (message) => {
@@ -28865,7 +28865,7 @@ var require_core = __commonJS({
     var command_1 = require_command();
     var file_command_1 = require_file_command();
     var utils_1 = require_utils();
-    var os4 = __importStar(require("os"));
+    var os5 = __importStar(require("os"));
     var path2 = __importStar(require("path"));
     var oidc_utils_1 = require_oidc_utils();
     var ExitCode;
@@ -28933,7 +28933,7 @@ Support boolean input list: \`true | True | TRUE | false | False | FALSE\``);
       if (filePath) {
         return (0, file_command_1.issueFileCommand)("OUTPUT", (0, file_command_1.prepareKeyValueMessage)(name, value));
       }
-      process.stdout.write(os4.EOL);
+      process.stdout.write(os5.EOL);
       (0, command_1.issueCommand)("set-output", { name }, (0, utils_1.toCommandValue)(value));
     }
     exports2.setOutput = setOutput;
@@ -28967,7 +28967,7 @@ Support boolean input list: \`true | True | TRUE | false | False | FALSE\``);
     }
     exports2.notice = notice2;
     function info(message) {
-      process.stdout.write(message + os4.EOL);
+      process.stdout.write(message + os5.EOL);
     }
     exports2.info = info;
     function startGroup(name) {
@@ -29045,10 +29045,10 @@ var import_node_os = __toESM(require("node:os"));
 var import_node_path = __toESM(require("node:path"));
 var GITHUB_REPO_RE = /^github\.com\/[^/]+\/[^/]+\//u;
 var FILENAME_RE = /(?<filename>\S+_test.go):(?<lineNumber>\d+)/iu;
-var createAnnotations = (suiteSummary, reruns) => {
+var createAnnotations = (suiteSummary, reruns, { modulePath } = {}) => {
   const annotations = [];
   for (const [packageName, packageSummary] of suiteSummary) {
-    const packagePath = getPackagePath(packageName);
+    const packagePath = getPackagePath(packageName, modulePath);
     for (const [testName, testSummary] of packageSummary) {
       const rerun = reruns.find(
         (r) => r.packageName === packageName && r.testName === testName
@@ -29066,7 +29066,15 @@ var createAnnotations = (suiteSummary, reruns) => {
   }
   return annotations;
 };
-var getPackagePath = (packageName) => {
+var getPackagePath = (packageName, modulePath) => {
+  if (modulePath) {
+    if (packageName === modulePath) {
+      return "";
+    }
+    if (packageName.startsWith(`${modulePath}/`)) {
+      return packageName.slice(modulePath.length + 1);
+    }
+  }
   return packageName.replace(GITHUB_REPO_RE, "");
 };
 var getAnnotationFromOutput = (name, packagePath, testSummary, rerun = void 0) => {
@@ -29100,9 +29108,33 @@ var joinOutput = (allRunsOutput) => {
   return outputWithTitles.join(import_node_os.default.EOL);
 };
 
-// src/rerun-report.ts
+// src/go-mod.ts
 var import_promises = __toESM(require("node:fs/promises"));
 var import_node_os2 = __toESM(require("node:os"));
+var MODULE_RE = /^module\s+"?(?<modulePath>[^\s"]+)"?\s*$/u;
+var readModulePath = async (goModPath) => {
+  let contents;
+  try {
+    contents = await import_promises.default.readFile(goModPath, "utf8");
+  } catch (error2) {
+    if (error2 instanceof Error && "code" in error2 && error2.code === "ENOENT") {
+      return void 0;
+    }
+    (0, import_core2.debug)(`Unable to read ${goModPath}: ${error2}`);
+    return void 0;
+  }
+  for (const line of contents.split(import_node_os2.default.EOL)) {
+    const match = MODULE_RE.exec(line.trim());
+    if (match?.groups?.modulePath) {
+      return match.groups.modulePath;
+    }
+  }
+  return void 0;
+};
+
+// src/rerun-report.ts
+var import_promises2 = __toESM(require("node:fs/promises"));
+var import_node_os3 = __toESM(require("node:os"));
 var RERUN_RE = /^(?<packageName>[\w./]+)\.(?<testName>[\w./]+): (?<runs>\d+) run(?:s)?, (?<failures>\d+) failure(?:s)?$/u;
 var readRerunReport = async (rerunReport) => {
   if (rerunReport === "") {
@@ -29110,7 +29142,7 @@ var readRerunReport = async (rerunReport) => {
   }
   let report;
   try {
-    report = await import_promises.default.readFile(rerunReport, "utf8");
+    report = await import_promises2.default.readFile(rerunReport, "utf8");
   } catch (error2) {
     if (error2 instanceof Error && "code" in error2 && error2.code === "ENOENT") {
       report = "";
@@ -29118,7 +29150,7 @@ var readRerunReport = async (rerunReport) => {
       throw error2;
     }
   }
-  return report.split(import_node_os2.default.EOL).flatMap((line) => {
+  return report.split(import_node_os3.default.EOL).flatMap((line) => {
     const groups = RERUN_RE.exec(line.trim())?.groups ?? {};
     const { packageName, testName, runs, failures } = groups;
     return packageName && testName && runs && failures ? {
@@ -29177,7 +29209,7 @@ var addEventToSummary = (summary, event) => {
 
 // src/test-report.ts
 var import_node_fs = __toESM(require("node:fs"));
-var import_node_os3 = __toESM(require("node:os"));
+var import_node_os4 = __toESM(require("node:os"));
 var import_node_stream = __toESM(require("node:stream"));
 
 // node_modules/.pnpm/valibot@1.4.2_typescript@5.9.3/node_modules/valibot/dist/index.mjs
@@ -29535,7 +29567,7 @@ var parseJSONLine = (line) => {
 async function* splitLines(chunks) {
   let buffer = "";
   for await (const chunk of chunks) {
-    const lines = (buffer + chunk.toString()).split(import_node_os3.default.EOL);
+    const lines = (buffer + chunk.toString()).split(import_node_os4.default.EOL);
     buffer = lines.pop() ?? "";
     for (const line of lines) {
       const trimmedLine = line.trim();
@@ -29554,14 +29586,14 @@ async function* parseLines(lines) {
     const [jsonError, json] = parseJSONLine(line);
     if (jsonError) {
       (0, import_core2.debug)(
-        `Unexpected JSON parsing error.${import_node_os3.default.EOL}Line: ${line}${import_node_os3.default.EOL}Error: ${jsonError}`
+        `Unexpected JSON parsing error.${import_node_os4.default.EOL}Line: ${line}${import_node_os4.default.EOL}Error: ${jsonError}`
       );
     }
     if (json) {
       const [parseError, result] = parseTestEvent(json);
       if (parseError) {
         (0, import_core2.debug)(
-          `Unexpected event parsing error.${import_node_os3.default.EOL}Line: ${line}${import_node_os3.default.EOL}Error: ${parseError}`
+          `Unexpected event parsing error.${import_node_os4.default.EOL}Line: ${line}${import_node_os4.default.EOL}Error: ${parseError}`
         );
       }
       if (result) {
@@ -29574,13 +29606,15 @@ async function* parseLines(lines) {
 // src/index.ts
 var goTestAnnotations = async ({
   testReport: testReport2,
-  rerunFailsReport: rerunFailsReport2
+  rerunFailsReport: rerunFailsReport2,
+  goMod = "go.mod"
 }) => {
-  const [suiteSummary, reruns] = await Promise.all([
+  const [suiteSummary, reruns, modulePath] = await Promise.all([
     createSuiteSummary(readTestReport(testReport2)),
-    readRerunReport(rerunFailsReport2)
+    readRerunReport(rerunFailsReport2),
+    readModulePath(goMod)
   ]);
-  return createAnnotations(suiteSummary, reruns);
+  return createAnnotations(suiteSummary, reruns, { modulePath });
 };
 
 // src/main.ts

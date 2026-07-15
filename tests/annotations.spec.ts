@@ -144,6 +144,54 @@ describe('createAnnotations', () => {
     ]);
   });
 
+  it('strips the module path from package paths when provided', () => {
+    const summary: SuiteSummary = new Map([
+      [
+        'myproject/services/core/user/tests',
+        new Map([
+          [
+            'TestUserMe',
+            {
+              status: 'fail',
+              output: ['    me_test.go:34: oh no!'],
+            },
+          ],
+        ]),
+      ],
+    ]);
+
+    const result = Subject.createAnnotations(summary, [], {
+      modulePath: 'myproject',
+    });
+
+    expect(result).toEqual([
+      {
+        title: 'FAIL: myproject/services/core/user/tests.TestUserMe',
+        file: 'services/core/user/tests/me_test.go',
+        startLine: 34,
+        message: '    me_test.go:34: oh no!',
+        level: 'error',
+      },
+    ]);
+  });
+
+  it('falls back to github.com regex when module path is missing', () => {
+    const summary: SuiteSummary = new Map([
+      [
+        'github.com/owner/repo/greet',
+        new Map([
+          [
+            'wave',
+            { status: 'fail', output: ['omg failing_test.go:1337 failed!'] },
+          ],
+        ]),
+      ],
+    ]);
+    const result = Subject.createAnnotations(summary, []);
+
+    expect(result[0]?.file).toBe('greet/failing_test.go');
+  });
+
   it('logs multiple runs', () => {
     const summary: SuiteSummary = new Map([
       [
