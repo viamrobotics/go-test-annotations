@@ -1,6 +1,6 @@
 {
-  "extends": "@viamrobotics/typescript-config/base.json",
   "compilerOptions": {
+    "strict": true,
     "types": ["node"],
     "module": "preserve",
     "moduleResolution": "bundler",
