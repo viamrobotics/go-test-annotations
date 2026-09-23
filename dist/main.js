@@ -29180,7 +29180,7 @@ var import_node_fs = __toESM(require("node:fs"));
 var import_node_os3 = __toESM(require("node:os"));
 var import_node_stream = __toESM(require("node:stream"));
 
-// node_modules/.pnpm/valibot@1.4.2_typescript@5.9.3/node_modules/valibot/dist/index.mjs
+// node_modules/.pnpm/valibot@1.5.0_typescript@5.9.3/node_modules/valibot/dist/index.mjs
 var store$4;
 var DEFAULT_CONFIG = {
   lang: void 0,
@@ -29246,27 +29246,23 @@ function _addIssue(context, label, dataset, config$1, other) {
   if (dataset.issues) dataset.issues.push(issue);
   else dataset.issues = [issue];
 }
-var _standardCache = /* @__PURE__ */ new WeakMap();
 // @__NO_SIDE_EFFECTS__
-function _getStandardProps(context) {
-  let cached = _standardCache.get(context);
-  if (!cached) {
-    cached = {
-      version: 1,
-      vendor: "valibot",
-      validate(value$1) {
-        return context["~run"]({ value: value$1 }, /* @__PURE__ */ getGlobalConfig());
-      }
-    };
-    _standardCache.set(context, cached);
-  }
-  return cached;
+function _isSameValueZero(value1, value2) {
+  return value1 === value2 || Number.isNaN(value1) && Number.isNaN(value2);
 }
 // @__NO_SIDE_EFFECTS__
 function _joinExpects(values$1, separator) {
   const list = [...new Set(values$1)];
   if (list.length > 1) return `(${list.join(` ${separator} `)})`;
   return list[0] ?? "never";
+}
+function _standardSchema(schema) {
+  schema["~standard"] = {
+    version: 1,
+    vendor: "valibot",
+    validate: (value$1) => schema["~run"]({ value: value$1 }, /* @__PURE__ */ getGlobalConfig())
+  };
+  return schema;
 }
 var ValiError = class extends Error {
   /**
@@ -29291,7 +29287,7 @@ function getDefault(schema, dataset, config$1) {
 }
 // @__NO_SIDE_EFFECTS__
 function exactOptional(wrapped, default_) {
-  return {
+  return _standardSchema({
     kind: "schema",
     type: "exact_optional",
     reference: exactOptional,
@@ -29299,17 +29295,14 @@ function exactOptional(wrapped, default_) {
     async: false,
     wrapped,
     default: default_,
-    get "~standard"() {
-      return /* @__PURE__ */ _getStandardProps(this);
-    },
     "~run"(dataset, config$1) {
       return this.wrapped["~run"](dataset, config$1);
     }
-  };
+  });
 }
 // @__NO_SIDE_EFFECTS__
 function literal(literal_, message$1) {
-  return {
+  return _standardSchema({
     kind: "schema",
     type: "literal",
     reference: literal,
@@ -29317,38 +29310,32 @@ function literal(literal_, message$1) {
     async: false,
     literal: literal_,
     message: message$1,
-    get "~standard"() {
-      return /* @__PURE__ */ _getStandardProps(this);
-    },
     "~run"(dataset, config$1) {
-      if (dataset.value === this.literal) dataset.typed = true;
+      if (/* @__PURE__ */ _isSameValueZero(dataset.value, this.literal)) dataset.typed = true;
       else _addIssue(this, "type", dataset, config$1);
       return dataset;
     }
-  };
+  });
 }
 // @__NO_SIDE_EFFECTS__
 function number(message$1) {
-  return {
+  return _standardSchema({
     kind: "schema",
     type: "number",
     reference: number,
     expects: "number",
     async: false,
     message: message$1,
-    get "~standard"() {
-      return /* @__PURE__ */ _getStandardProps(this);
-    },
     "~run"(dataset, config$1) {
       if (typeof dataset.value === "number" && !isNaN(dataset.value)) dataset.typed = true;
       else _addIssue(this, "type", dataset, config$1);
       return dataset;
     }
-  };
+  });
 }
 // @__NO_SIDE_EFFECTS__
 function object(entries$1, message$1) {
-  return {
+  return _standardSchema({
     kind: "schema",
     type: "object",
     reference: object,
@@ -29356,9 +29343,6 @@ function object(entries$1, message$1) {
     async: false,
     entries: entries$1,
     message: message$1,
-    get "~standard"() {
-      return /* @__PURE__ */ _getStandardProps(this);
-    },
     "~run"(dataset, config$1) {
       const input = dataset.value;
       if (input && typeof input === "object") {
@@ -29409,26 +29393,23 @@ function object(entries$1, message$1) {
       } else _addIssue(this, "type", dataset, config$1);
       return dataset;
     }
-  };
+  });
 }
 // @__NO_SIDE_EFFECTS__
 function string(message$1) {
-  return {
+  return _standardSchema({
     kind: "schema",
     type: "string",
     reference: string,
     expects: "string",
     async: false,
     message: message$1,
-    get "~standard"() {
-      return /* @__PURE__ */ _getStandardProps(this);
-    },
     "~run"(dataset, config$1) {
       if (typeof dataset.value === "string") dataset.typed = true;
       else _addIssue(this, "type", dataset, config$1);
       return dataset;
     }
-  };
+  });
 }
 // @__NO_SIDE_EFFECTS__
 function _subIssues(datasets) {
@@ -29439,7 +29420,7 @@ function _subIssues(datasets) {
 }
 // @__NO_SIDE_EFFECTS__
 function union(options, message$1) {
-  return {
+  return _standardSchema({
     kind: "schema",
     type: "union",
     reference: union,
@@ -29447,9 +29428,6 @@ function union(options, message$1) {
     async: false,
     options,
     message: message$1,
-    get "~standard"() {
-      return /* @__PURE__ */ _getStandardProps(this);
-    },
     "~run"(dataset, config$1) {
       let validDataset;
       let typedDatasets;
@@ -29474,7 +29452,7 @@ function union(options, message$1) {
       else _addIssue(this, "type", dataset, config$1, { issues: /* @__PURE__ */ _subIssues(untypedDatasets) });
       return dataset;
     }
-  };
+  });
 }
 // @__NO_SIDE_EFFECTS__
 function safeParse(schema, input, config$1) {
