@@ -8,15 +8,22 @@ import type { SuiteSummary, TestSummary } from './suite-summary.js';
 const GITHUB_REPO_RE = /^github\.com\/[^/]+\/[^/]+\//u;
 const FILENAME_RE = /(?<filename>\S+_test.go):(?<lineNumber>\d+)/iu;
 
+/** Optional inputs influencing annotation generation. */
+interface CreateAnnotationsOptions {
+  /** Go module path read from `go.mod`, used to map packages to repo paths. */
+  modulePath?: string;
+}
+
 /** Given a suite summary, create annotation objects to be logged. */
 const createAnnotations = (
   suiteSummary: SuiteSummary,
-  reruns: Rerun[]
+  reruns: Rerun[],
+  { modulePath }: CreateAnnotationsOptions = {}
 ): Annotation[] => {
   const annotations: Annotation[] = [];
 
   for (const [packageName, packageSummary] of suiteSummary) {
-    const packagePath = getPackagePath(packageName);
+    const packagePath = getPackagePath(packageName, modulePath);
 
     for (const [testName, testSummary] of packageSummary) {
       const rerun = reruns.find(
@@ -39,7 +46,20 @@ const createAnnotations = (
   return annotations;
 };
 
-const getPackagePath = (packageName: string): string => {
+const getPackagePath = (
+  packageName: string,
+  modulePath: string | undefined
+): string => {
+  if (modulePath) {
+    if (packageName === modulePath) {
+      return '';
+    }
+
+    if (packageName.startsWith(`${modulePath}/`)) {
+      return packageName.slice(modulePath.length + 1);
+    }
+  }
+
   return packageName.replace(GITHUB_REPO_RE, '');
 };
 
@@ -85,4 +105,4 @@ const joinOutput = (allRunsOutput: string[]): string => {
   return outputWithTitles.join(os.EOL);
 };
 
-export { createAnnotations };
+export { createAnnotations, type CreateAnnotationsOptions };
